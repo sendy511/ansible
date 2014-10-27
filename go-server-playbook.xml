@@ -1,0 +1,9 @@
+- hosts: 127.0.0.1 
+  tasks:
+  - name: download go server
+    command: wget http://10.18.8.100/go-server-14.2.0-377.deb -O ~/go-server-14.2.0-377.deb
+  - name: install go server 
+    command: sudo dpkg -i ~/go-server-14.2.0-377.deb 
+  - name: install git
+    apt: name=gitpkg state=present
+    sudo: yes
